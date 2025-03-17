@@ -2,9 +2,10 @@ file_format: "1"
 id: scylla
 name: Scylla
 type: shield
-url: 
+url: https://github.com/Bastardkb/Scylla
 requires: 
   - pro_micro
+  - seeeduino_xiao_ble
 exposes: 
 features:
   - keys
@@ -12,3 +13,4 @@ features:
 siblings:
   - scylla_left
   - scylla_right
+  - scylla_dongle

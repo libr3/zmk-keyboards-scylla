@@ -7,7 +7,9 @@
 #define ADJ 1
 
 / {
+
     keymap {
+
         compatible = "zmk,keymap";
 
         default_layer {
@@ -33,5 +35,6 @@
                                                                             &none          &none                &none            &none
             >;
         };
+
     };
 };

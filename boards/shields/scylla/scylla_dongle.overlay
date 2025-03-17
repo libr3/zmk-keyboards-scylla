@@ -1,11 +1,21 @@
-#include <dt-bindings/zmk/matrix_transform.h>
 #include "scylla-layouts.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
+
+&physical_layout0 {
+    transform = <&default_transform>;
+};
 
 / {
 
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &physical_layout0;
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 
     default_transform: keymap_transform_0 {
@@ -20,20 +30,6 @@
                                                              RC(4,3)        RC(4,4)        RC(4,1)              RC(4,10)         RC(4,7)    RC(4,8)
                                                                             RC(4,5)        RC(4,2)              RC(4,9)          RC(4,6)
         >;
-    };
-
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "row2col";
-        wakeup-source;
-
-        row-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 4 (GPIO_ACTIVE_HIGH)>
-            , <&pro_micro 9 (GPIO_ACTIVE_HIGH)>
-            ;
     };
 
 };
